@@ -615,6 +615,7 @@ GameObject:
   - component: {fileID: 1041342548}
   - component: {fileID: 1041342547}
   - component: {fileID: 1041342546}
+  - component: {fileID: 1041342551}
   m_Layer: 0
   m_Name: Platform
   m_TagString: Untagged
@@ -708,6 +709,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1041342551
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041342545}
+  serializedVersion: 2
+  m_Mass: 10000
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1050243071
 GameObject:
   m_ObjectHideFlags: 0
@@ -849,19 +866,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 3
---- !u!65 &1127405817
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1129376173}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.06, y: 0.02, z: 0.07}
-  m_Center: {x: 0, y: 0, z: -0.005}
 --- !u!1 &1129376173
 GameObject:
   m_ObjectHideFlags: 0
@@ -871,7 +875,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1129822283}
-  - component: {fileID: 1127405817}
   - component: {fileID: 1124292435}
   m_Layer: 0
   m_Name: palm
@@ -1358,13 +1361,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1747796608}
-  m_LocalRotation: {x: 0.23028553, y: -0, z: -0, w: 0.97312313}
-  m_LocalPosition: {x: 0, y: 0.2481, z: -0.189}
+  m_LocalRotation: {x: 0.2881014, y: -0, z: -0, w: 0.95759994}
+  m_LocalPosition: {x: 0, y: 0.297, z: -0.174}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 26.628002, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 33.489002, y: 0, z: 0}
 --- !u!1 &1796586604
 GameObject:
   m_ObjectHideFlags: 0
@@ -1489,19 +1492,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bcd03e00992e084c8be61565d44b8bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!65 &1837304374
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1843557432}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.06, y: 0.02, z: 0.07}
-  m_Center: {x: 0, y: 0, z: -0.005}
 --- !u!54 &1840499374
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1527,7 +1517,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1843861570}
-  - component: {fileID: 1837304374}
   - component: {fileID: 1840499374}
   m_Layer: 0
   m_Name: palm
