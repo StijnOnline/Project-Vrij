@@ -14,14 +14,19 @@ public class CameraLook : MonoBehaviour
         startRotation = camera.rotation;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        float handAverage = hand1.position.z + (hand2.position.z - hand1.position.z) / 2;
-        //Debug.Log(handAverage);
-        Quaternion targetRotation = startRotation * Quaternion.Euler(Vector3.up * handAverage * panMultiplier);
-        Debug.Log(targetRotation);
-        camera.rotation = targetRotation;
 
+        if (hand1.gameObject.activeSelf || hand2.gameObject.activeSelf)
+        {
+            float handAverage = 0f;
+            if (hand1.gameObject.activeSelf && !hand2.gameObject.activeSelf) { handAverage = hand1.position.z; }
+            if (!hand1.gameObject.activeSelf && hand2.gameObject.activeSelf) { handAverage = hand2.position.z; }
+            if (hand1.gameObject.activeSelf && hand2.gameObject.activeSelf) { handAverage = hand1.position.z + (hand2.position.z - hand1.position.z) / 2; }
+
+            Quaternion targetRotation = startRotation * Quaternion.Euler(Vector3.up * handAverage * panMultiplier);
+            camera.rotation = targetRotation;
+                       
+        }
     }
 }
