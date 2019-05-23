@@ -16,7 +16,6 @@ public class platform : MonoBehaviour
 
     void Update()
     {
-        //consider trying rigidbody movement
 
         if (hand1.gameObject.active && hand2.gameObject.active)
         {
