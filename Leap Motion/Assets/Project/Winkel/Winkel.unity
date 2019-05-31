@@ -1215,5 +1215,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -0.103
       objectReference: {fileID: 0}
+    - target: {fileID: 7239862056467630861, guid: c298b02ccbacc974480e7b6828e17be7,
+        type: 3}
+      propertyPath: m_OcclusionCulling
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c298b02ccbacc974480e7b6828e17be7, type: 3}
