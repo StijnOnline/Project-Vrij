@@ -7,12 +7,8 @@ public class CameraLook : MonoBehaviour
     public Transform hand1;
     public Transform hand2;
     public Transform camera;
-    Quaternion startRotation;
     public float panMultiplier = 1f;
-    void Start()
-    {
-        startRotation = camera.rotation;
-    }
+    
 
     void Update()
     {
@@ -24,8 +20,8 @@ public class CameraLook : MonoBehaviour
             if (!hand1.gameObject.activeSelf && hand2.gameObject.activeSelf) { handAverage = hand2.position.z; }
             if (hand1.gameObject.activeSelf && hand2.gameObject.activeSelf) { handAverage = hand1.position.z + (hand2.position.z - hand1.position.z) / 2; }
 
-            Quaternion targetRotation = startRotation * Quaternion.Euler(Vector3.up * handAverage * panMultiplier);
-            camera.rotation = targetRotation;
+            Quaternion targetRotation =  Quaternion.Euler(Vector3.up * handAverage * panMultiplier) * Quaternion.Euler(0,-90,0);
+            camera.localRotation = targetRotation;
                        
         }
     }

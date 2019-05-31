@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1565547413768111593}
   m_Layer: 0
-  m_Name: 02 - Blue Ball
-  m_TagString: Untagged
+  m_Name: Blue Ball
+  m_TagString: Product
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 836550294358022581}
   m_Layer: 0
   m_Name: 02 - Blue Ball
-  m_TagString: Untagged
+  m_TagString: Product
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
