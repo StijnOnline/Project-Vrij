@@ -8,7 +8,6 @@ public class StartChoice : MonoBehaviour
     public GameObject choice;
     public List<string> choiceText;
 
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Cart")
