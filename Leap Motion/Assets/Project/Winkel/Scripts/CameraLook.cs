@@ -5,11 +5,15 @@ using UnityEngine;
 public class CameraLook : MonoBehaviour
 {
     public bool pan = true;
+    public float panMultiplier = 1f;
+    Transform hand1;
+    Transform hand2;
 
-    public Transform hand1;
-    public Transform hand2;
-    public Transform camera;
-    public float panMultiplier = 1f;    
+    private void Start()
+    {
+        hand1 = GameManager.GM.hand1;
+        hand2 = GameManager.GM.hand2;
+    }
 
     void Update()
     {
@@ -22,6 +26,6 @@ public class CameraLook : MonoBehaviour
         }
 
         Quaternion targetRotation = Quaternion.Euler(Vector3.up * handAverage * panMultiplier) * Quaternion.Euler(20, -90, 0);
-        camera.localRotation = targetRotation;
+        transform.localRotation = targetRotation;
     }
 }

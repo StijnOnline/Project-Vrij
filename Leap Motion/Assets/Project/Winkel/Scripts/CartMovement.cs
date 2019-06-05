@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class CartMovement : MonoBehaviour
 {
-    public float speed = 0.5f;
     Rigidbody rigidB;
+
+    public float speed = 0.5f;    
     public List<Transform> route = new List<Transform>();
 
     void Start()
@@ -13,7 +14,7 @@ public class CartMovement : MonoBehaviour
         rigidB = GetComponent<Rigidbody>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (route.Count > 0)
         {
