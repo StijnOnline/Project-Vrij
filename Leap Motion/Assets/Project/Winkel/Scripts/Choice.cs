@@ -7,15 +7,15 @@ using UnityEngine.UI;
 public class Choice : MonoBehaviour
 {
 
+    public StartChoice startChoice;
+
     public CameraLook camLook;
     public enum Choices { Middle,Left,Right};
     public Choices choice;
     public float delay = 1f;
     public float startTime = 0f;
-    public CartMovement cart;
 
-    public List<Transform> left = new List<Transform>();
-    public List<Transform> right = new List<Transform>();
+    public CartMovement cart;
 
     private void Awake()
     {
@@ -27,8 +27,8 @@ public class Choice : MonoBehaviour
     {
         if (Time.time > startTime + delay)
         {
-            if(choice == Choices.Left) { cart.route.AddRange(left); }
-            if (choice == Choices.Right) { cart.route.AddRange(right); }
+            if(choice == Choices.Left) { cart.route.Add(startChoice.left[0]); }
+            if (choice == Choices.Right) { cart.route.Add(startChoice.right[0]); }
             gameObject.SetActive(false);
         }
     }
