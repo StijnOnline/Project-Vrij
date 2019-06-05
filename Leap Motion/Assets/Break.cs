@@ -14,6 +14,7 @@ public class Break : MonoBehaviour
             {
                 rb.isKinematic = false;
             }
+            GetComponent<Collider>().enabled = false;
         }
     }
 }
