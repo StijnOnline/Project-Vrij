@@ -5,15 +5,19 @@ using UnityEngine.UI;
 
 public class StartGame : MonoBehaviour
 {
-    public Transform hand1;
-    public Transform hand2;
+    Transform hand1;
+    Transform hand2;
     public GameObject leftHandTracked;
     public GameObject rightHandTracked;
 
     public List<Behaviour> enableList = new List<Behaviour>();
     public List<GameObject> disableList = new List<GameObject>();
 
-   
+    private void Start()
+    {
+        hand1 = GameManager.GM.hand1;
+        hand2 = GameManager.GM.hand2;
+    }
 
     void Update()
     {

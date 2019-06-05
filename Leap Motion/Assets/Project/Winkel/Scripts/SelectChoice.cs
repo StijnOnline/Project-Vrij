@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class SelectChoice : MonoBehaviour
 {
-    public Choice.Choices choice;
+    public StartChoice.Choices choice;
     private void OnTriggerEnter(Collider other)
     {
-        GetComponentInParent<Choice>().choice = choice;
+        GameManager.GM.currentChoice.GetComponent<StartChoice>().choice = choice;
     }
 }
