@@ -21,6 +21,7 @@ public class StartChoice : MonoBehaviour
             if (choice == Choices.Left) { cartMovement.route.Add(left[0]); }
             if (choice == Choices.Right) { cartMovement.route.Add(right[0]); }
             GameManager.GM.choiceDisplay.SetActive(false);
+            startTime = 0;
         }
     }
 
