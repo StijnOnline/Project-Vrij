@@ -7,10 +7,13 @@ public class StartChoice : MonoBehaviour
 {
     public float delay = 1f;
     public float startTime = 0f;
+    [Space(10)]
     public List<string> choiceText;
     public List<Transform> left = new List<Transform>();
     public List<Transform> right = new List<Transform>();
+    
     public enum Choices { Middle, Left, Right };
+    [Space(10)]
     public Choices choice;
 
     private void Update()
