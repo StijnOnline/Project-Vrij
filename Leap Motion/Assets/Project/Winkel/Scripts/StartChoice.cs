@@ -21,8 +21,8 @@ public class StartChoice : MonoBehaviour
         if (startTime != 0 && Time.time > startTime + delay)
         {
             CartMovement cartMovement = GameManager.GM.cart.GetComponent<CartMovement>();
-            if (choice == Choices.Left) { cartMovement.route.Add(left[0]); }
-            if (choice == Choices.Right) { cartMovement.route.Add(right[0]); }
+            if (choice == Choices.Left) { cartMovement.route.AddRange(left); }
+            if (choice == Choices.Right) { cartMovement.route.AddRange(right); }
             GameManager.GM.choiceDisplay.SetActive(false);
             startTime = 0;
         }
