@@ -47914,7 +47914,7 @@ PrefabInstance:
     - target: {fileID: 1333585685543711069, guid: e90d891ea1a1be7439ded4db5c0fe110,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4
+      value: -28
       objectReference: {fileID: 0}
     - target: {fileID: 1333585685543711069, guid: e90d891ea1a1be7439ded4db5c0fe110,
         type: 3}
@@ -47970,6 +47970,24 @@ PrefabInstance:
         type: 3}
       propertyPath: spawnDelay
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 409373554, guid: e90d891ea1a1be7439ded4db5c0fe110, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 205023248, guid: e90d891ea1a1be7439ded4db5c0fe110, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8896277271799311936, guid: e90d891ea1a1be7439ded4db5c0fe110,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036314500323195656, guid: e90d891ea1a1be7439ded4db5c0fe110,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e90d891ea1a1be7439ded4db5c0fe110, type: 3}
