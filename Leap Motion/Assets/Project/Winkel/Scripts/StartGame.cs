@@ -2,29 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Leap.Unity.Interaction;
 
 public class StartGame : MonoBehaviour
 {
-    Transform hand1;
-    Transform hand2;
-    public GameObject leftHandTracked;
-    public GameObject rightHandTracked;
-
     public List<Behaviour> enableList = new List<Behaviour>();
     public List<GameObject> disableList = new List<GameObject>();
 
-    private void Start()
-    {
-        hand1 = GameManager.GM.hand1;
-        hand2 = GameManager.GM.hand2;
-    }
-
     void Update()
     {
-        leftHandTracked.SetActive(hand1.gameObject.activeSelf);
-        rightHandTracked.SetActive(hand2.gameObject.activeSelf);
-
-        if (hand1.gameObject.activeSelf && hand2.gameObject.activeSelf)
+        if (GameManager.GM.hand1Tracked && GameManager.GM.hand2Tracked)
         {
             foreach(Behaviour c in enableList)
             {                

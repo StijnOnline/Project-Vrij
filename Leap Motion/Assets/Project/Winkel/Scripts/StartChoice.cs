@@ -31,7 +31,8 @@ public class StartChoice : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Cart")
-        {            
+        {
+            GameManager.GM.currentChoice = gameObject;
             GameManager.GM.choiceDisplay.SetActive(true);
             for (int i = 0; i< 3; i++)
             {
