@@ -1031,14 +1031,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cart: {fileID: 388411250}
   cartCamera: {fileID: 216464796}
+  choiceDisplay: {fileID: 7239862058008873809}
+  currentChoice: {fileID: 0}
   hand1: {fileID: 1171468333}
   hand2: {fileID: 1973222000}
+  InteractionManager: {fileID: 2104042348}
   hand1Controller: {fileID: 1048352357}
   hand2Controller: {fileID: 1050041036}
   hand1Tracked: 0
   hand2Tracked: 0
-  choiceDisplay: {fileID: 7239862058008873809}
-  currentChoice: {fileID: 0}
   allProducts:
   - {fileID: 4120624053730065763, guid: 8f42554189653fa4aa21b587bc92aec4, type: 3}
   - {fileID: 9216945697497249620, guid: 74a2f0fffed37624b99b1d0b0475219d, type: 3}
@@ -1047,6 +1048,7 @@ MonoBehaviour:
   inCart: []
   paused: 0
   pauseDelay: 1
+  pauseScreen: {fileID: 1232074647}
   audioSources: []
 --- !u!4 &499918820
 Transform:
@@ -2520,6 +2522,12 @@ Transform:
 --- !u!1 &1202615040 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 560679815768693988, guid: 275f2802c4ef6af418c75a802f0a81a6,
+    type: 3}
+  m_PrefabInstance: {fileID: 560679814704508900}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1232074647 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1232074647, guid: 275f2802c4ef6af418c75a802f0a81a6,
     type: 3}
   m_PrefabInstance: {fileID: 560679814704508900}
   m_PrefabAsset: {fileID: 0}
@@ -5144,6 +5152,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2102540812}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2104042348 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1547536727713982373, guid: c298b02ccbacc974480e7b6828e17be7,
+    type: 3}
+  m_PrefabInstance: {fileID: 7239862058008873808}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0625e574c0d47a241b7dfc7a8c67ca2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &532729536281376570
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5330,6 +5350,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1232074647, guid: 275f2802c4ef6af418c75a802f0a81a6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 275f2802c4ef6af418c75a802f0a81a6, type: 3}
 --- !u!1001 &856061510397410028
@@ -5422,7 +5446,7 @@ PrefabInstance:
     - target: {fileID: 2183430528404399458, guid: b40a32f9a3188ec49a32855a9603a233,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.743
+      value: -13.69
       objectReference: {fileID: 0}
     - target: {fileID: 2183430528404399458, guid: b40a32f9a3188ec49a32855a9603a233,
         type: 3}
@@ -5488,6 +5512,11 @@ PrefabInstance:
         type: 3}
       propertyPath: choice
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2183430528404399516, guid: b40a32f9a3188ec49a32855a9603a233,
+        type: 3}
+      propertyPath: delay
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b40a32f9a3188ec49a32855a9603a233, type: 3}
@@ -6028,6 +6057,11 @@ PrefabInstance:
       propertyPath: route.Array.data[0]
       value: 
       objectReference: {fileID: 1839230289}
+    - target: {fileID: 8402304024990137319, guid: c298b02ccbacc974480e7b6828e17be7,
+        type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8402304024990137318, guid: c298b02ccbacc974480e7b6828e17be7,
         type: 3}
       propertyPath: m_LocalPosition.x

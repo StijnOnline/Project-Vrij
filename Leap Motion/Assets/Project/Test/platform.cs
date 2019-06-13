@@ -17,7 +17,7 @@ public class platform : MonoBehaviour
     void Update()
     {
 
-        if (hand1.gameObject.active && hand2.gameObject.active)
+        if (hand1.gameObject.activeSelf && hand2.gameObject.activeSelf)
         {
 
             Debug.DrawLine(hand1.position, hand2.position, Color.red, Time.deltaTime);

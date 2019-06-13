@@ -6,32 +6,35 @@ using Leap.Unity.Interaction;
 public class GameManager : MonoBehaviour
 {
     public static GameManager GM;
-
+    [Header("Cart")]
     public GameObject cart;
     public GameObject cartCamera;
-    [Space(5)]
-    public Transform hand1;
-    public Transform hand2;
-    public InteractionController hand1Controller;
-    public InteractionController hand2Controller;
-    public bool hand1Tracked = false;
-    public bool hand2Tracked = false;
-    [Space(5)]
-
     public GameObject choiceDisplay;
     [HideInInspector] public GameObject currentChoice;
 
-    [Space(5)]
+    [Header("Hands")]
+    public Transform hand1;
+    public Transform hand2;
+    public InteractionManager InteractionManager;
+    public InteractionController hand1Controller;
+    public InteractionController hand2Controller;
+    [HideInInspector] public bool hand1Tracked = false;
+    [HideInInspector] public bool hand2Tracked = false;
+
+    [Header("Products")]
     public List<GameObject> allProducts = new List<GameObject>();
     public List<string> shoppingList = new List<string>();
     public List<int> amounts = new List<int>();
     public List<GameObject> inCart = new List<GameObject>();
 
-    [Space(5)]
-    private float lastTracked = 0f;
-    public bool paused = false;
+    [Header("Pausing")]
+    [HideInInspector] public bool paused = false;
     public float pauseDelay = 1f;
+    private float lastTracked = 0f;
+    public GameObject pauseScreen;
     public List<AudioSource> audioSources;
+    
+
 
     private void Start()
     {
@@ -43,17 +46,18 @@ public class GameManager : MonoBehaviour
         hand1Tracked = hand1Controller.isTracked;
         hand2Tracked = hand2Controller.isTracked;
 
-        if (GameManager.GM.hand1Tracked || GameManager.GM.hand2Tracked)
+        if (GameManager.GM.hand1Tracked && GameManager.GM.hand2Tracked)
         {
             lastTracked = Time.time;
             if (paused)
             {
                 paused = false;
-                //Time.timeScale = 1;
+                pauseScreen.SetActive(false);
                 cart.GetComponent<Rigidbody>().isKinematic = false;
-                foreach (AudioSource AS in audioSources)
+                InteractionManager.enabled = true;
+                foreach (AudioSource AudioSrc in audioSources)
                 {
-                    AS.Play();
+                    AudioSrc.Play();
                 }
             }
         }
@@ -61,12 +65,19 @@ public class GameManager : MonoBehaviour
         if (Time.time > lastTracked + pauseDelay)
         {
             paused = true;
-            //Time.timeScale = 0;
+            pauseScreen.SetActive(true);
             cart.GetComponent<Rigidbody>().isKinematic = true;
-            foreach (AudioSource AS in audioSources)
+            InteractionManager.enabled = false;
+            foreach (AudioSource AudioSrc in audioSources)
             {
-                AS.Pause();
+                AudioSrc.Pause();
             }
+        }
+
+        if (paused)
+        {
+            pauseScreen.transform.GetChild(0).gameObject.SetActive(hand1Tracked);
+            pauseScreen.transform.GetChild(1).gameObject.SetActive(hand2Tracked);
         }
     }
 
