@@ -33,6 +33,9 @@ public class GameManager : MonoBehaviour
     private float lastTracked = 0f;
     public GameObject pauseScreen;
     public List<AudioSource> audioSources;
+
+    [Header("Start")]
+    public GameObject logo;
     
 
 
@@ -45,40 +48,55 @@ public class GameManager : MonoBehaviour
     {
         hand1Tracked = hand1Controller.isTracked;
         hand2Tracked = hand2Controller.isTracked;
-
-        if (GameManager.GM.hand1Tracked && GameManager.GM.hand2Tracked)
+        if (!logo.activeSelf)
         {
-            lastTracked = Time.time;
-            if (paused)
+            if (GameManager.GM.hand1Tracked && GameManager.GM.hand2Tracked)
             {
-                paused = false;
-                pauseScreen.SetActive(false);
-                cart.GetComponent<Rigidbody>().isKinematic = false;
-                InteractionManager.enabled = true;
-                foreach (AudioSource AudioSrc in audioSources)
+                lastTracked = Time.time;
+                if (paused)
                 {
-                    AudioSrc.Play();
+                    paused = false;
+                    pauseScreen.SetActive(false);
+                    cart.GetComponent<Rigidbody>().isKinematic = false;
+                    InteractionManager.enabled = true;
+                    foreach (AudioSource AudioSrc in audioSources)
+                    {
+                        AudioSrc.Play();
+                    }
                 }
             }
-        }
 
-        if (Time.time > lastTracked + pauseDelay)
-        {
-            paused = true;
-            pauseScreen.SetActive(true);
-            cart.GetComponent<Rigidbody>().isKinematic = true;
-            InteractionManager.enabled = false;
-            foreach (AudioSource AudioSrc in audioSources)
+            if (Time.time > lastTracked + pauseDelay)
             {
-                AudioSrc.Pause();
+                paused = true;
+                pauseScreen.SetActive(true);
+                cart.GetComponent<Rigidbody>().isKinematic = true;
+                InteractionManager.enabled = false;
+                foreach (AudioSource AudioSrc in audioSources)
+                {
+                    AudioSrc.Pause();
+                }
+            }
+
+            if (paused)
+            {
+                pauseScreen.transform.GetChild(0).gameObject.SetActive(hand1Tracked);
+                pauseScreen.transform.GetChild(1).gameObject.SetActive(hand2Tracked);
             }
         }
-
-        if (paused)
+        else if (GameManager.GM.hand1Tracked && GameManager.GM.hand2Tracked)
         {
-            pauseScreen.transform.GetChild(0).gameObject.SetActive(hand1Tracked);
-            pauseScreen.transform.GetChild(1).gameObject.SetActive(hand2Tracked);
+            logo.SetActive(false);
         }
+    }
+
+    public void StartGame()
+    {
+        GameManager.GM.cart.GetComponent<CartMovement>().enabled = true;
+        GameManager.GM.cartCamera.GetComponent<CameraLook>().panMultiplier = 100f;
+        //fade title screen logo
+
+
     }
 
 }
