@@ -57,9 +57,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb1fb8b897006e04cb3ccfaecd54833a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shoppingListSize: 5
+  shoppingListSize: 20
   minMaxAmounts: {x: 1, y: 3}
-  listText: {fileID: 0}
+  amountText: {fileID: 0}
+  nameText: {fileID: 0}
+  scoreText: {fileID: 0}
 --- !u!1 &644512232731017358
 GameObject:
   m_ObjectHideFlags: 0
@@ -669,7 +671,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0ffc4ec8ef071ce4bbfcde61f021059e, type: 2}
+  - {fileID: 2100000, guid: 3fcc6fcca7b1791459bce7dd1a5a5cb8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -959,7 +961,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3a808d2096a39384aab5f35a3ea531a0, type: 2}
+  - {fileID: 2100000, guid: 3edb85184adeb6848a02de3ab92e83f7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1949,7 +1951,7 @@ GameObject:
   - component: {fileID: 8402304024055723353}
   - component: {fileID: 8402304024055723352}
   - component: {fileID: 8402304024055723351}
-  - component: {fileID: 5179412701086477490}
+  - component: {fileID: 216464800}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2022,7 +2024,7 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8402304024055723350}
   m_Enabled: 1
---- !u!114 &5179412701086477490
+--- !u!114 &216464800
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2035,7 +2037,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pan: 1
-  panMultiplier: 100
+  panMultiplier: 400
 --- !u!1 &8402304024474003294
 GameObject:
   m_ObjectHideFlags: 0
@@ -2182,7 +2184,6 @@ GameObject:
   - component: {fileID: 8402304024990137318}
   - component: {fileID: 8402304024990137320}
   - component: {fileID: 8402304024990137319}
-  - component: {fileID: 8402304024990137314}
   m_Layer: 0
   m_Name: Cart
   m_TagString: Cart
@@ -2218,7 +2219,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8402304024990137317}
   serializedVersion: 2
-  m_Mass: 1000
+  m_Mass: 10000
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
@@ -2233,29 +2234,19 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8402304024990137317}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c0615846ead3e4498989370e9de81c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.5
+  speed: 1
   route:
   - {fileID: 0}
---- !u!114 &8402304024990137314
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8402304024990137317}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1df118b1e4f69ae45a2ec04c0b10c030, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enableList:
-  - {fileID: 8402304024990137319}
-  disableList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
 --- !u!1 &8402304025080753881
 GameObject:
@@ -2281,7 +2272,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8402304025080753881}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.125, y: -0.249, z: 0}
+  m_LocalPosition: {x: -0.125, y: -0.437, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 8402304025505292261}

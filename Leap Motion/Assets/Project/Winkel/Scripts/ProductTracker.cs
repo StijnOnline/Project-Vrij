@@ -7,7 +7,9 @@ public class ProductTracker : MonoBehaviour
 {
     public int shoppingListSize = 5;
     public Vector2Int minMaxAmounts;
-    public TextMeshProUGUI listText;
+    public TextMeshProUGUI amountText;
+    public TextMeshProUGUI nameText;
+    public TextMeshProUGUI scoreText;
 
     void Start()
     {
@@ -26,7 +28,9 @@ public class ProductTracker : MonoBehaviour
 
         for (int i = 0;i< GameManager.GM.shoppingList.Count;i++)
         {
-            listText.text += "- "+ GameManager.GM.amounts[i] + " " + GameManager.GM.shoppingList[i] + (GameManager.GM.amounts[i] > 1 ? "(s)" : "") + "\n";
+            amountText.text += GameManager.GM.amounts[i] + "\n";
+            nameText.text += GameManager.GM.shoppingList[i].Split('+')[0] + "\n";
+            scoreText.text += GameManager.GM.shoppingList[i].Split('+')[1] + "\n";
         }
     }
 
