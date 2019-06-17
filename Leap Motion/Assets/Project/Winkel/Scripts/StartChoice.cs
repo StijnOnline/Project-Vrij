@@ -32,6 +32,12 @@ public class StartChoice : MonoBehaviour
     {
         if (other.tag == "Cart")
         {
+            //disable objects in cart (save)
+            foreach(GameObject g in GameManager.GM.inCart)
+            {
+                g.SetActive(false);
+            }
+
             GameManager.GM.currentChoice = gameObject;
             GameManager.GM.choiceDisplay.SetActive(true);
             for (int i = 0; i< 3; i++)

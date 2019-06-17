@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Leap.Unity.Interaction;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager GM;
+    public int score = 0;
+
     [Header("Cart")]
     public GameObject cart;
     public GameObject cartCamera;
@@ -42,6 +45,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         GM = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     private void Update()
@@ -95,8 +99,6 @@ public class GameManager : MonoBehaviour
         GameManager.GM.cart.GetComponent<CartMovement>().enabled = true;
         GameManager.GM.cartCamera.GetComponent<CameraLook>().panMultiplier = 100f;
         //fade title screen logo
-
-
     }
 
 }

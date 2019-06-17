@@ -11,19 +11,33 @@ public class Scanner : MonoBehaviour
 
     public AudioClip bleep;
 
-    int totalScore;
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Product")
         {
+            productText.color = Color.black;
             AudioSource.PlayOneShot(bleep);
-            productText.SetText(other.gameObject.name.Split('(')[0]);
-            scoreText.SetText("Total: " + totalScore);
+            string[] split = other.gameObject.name.Split('+');
+            productText.SetText(split[0] + "\n ");
+            StartCoroutine(Check(split[0], int.Parse(split[1].Split('(')[0])));               
         }
     }
 
-    public IEnumerator Check()
+    public IEnumerator Check(string name, int score)
     {
-        yield return 0;
+        yield return new WaitForSeconds(0.5f);
+        if (GameManager.GM.shoppingList.Contains(name) && GameManager.GM.amounts[GameManager.GM.shoppingList.IndexOf(name)] > 0)
+        {
+            productText.text += "+" + score;
+            productText.color = Color.green;
+            GameManager.GM.score += score;
+        }
+        else
+        {
+            productText.text += "-" + score;
+            productText.color = Color.red;
+            GameManager.GM.score -= score;
+        }
+        scoreText.SetText("Total: " + GameManager.GM.score);
     }
 }

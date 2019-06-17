@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class End : MonoBehaviour
 {
@@ -34,8 +35,11 @@ public class End : MonoBehaviour
     {
         for (int i = 0; i < GameManager.GM.inCart.Count; i++)
         {
+            GameManager.GM.inCart[i].SetActive(true);
             Instantiate(GameManager.GM.inCart[i], spawnPoint.position, spawnPoint.rotation);
             yield return new WaitForSeconds(spawnDelay);
         }
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene(1);
     }
 }
