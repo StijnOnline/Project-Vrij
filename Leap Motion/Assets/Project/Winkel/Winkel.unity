@@ -404,6 +404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4619a5600c5cea94d988eefab2c1b74a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 0
   cart: {fileID: 388411250}
   cartCamera: {fileID: 216464796}
   choiceDisplay: {fileID: 7239862058008873809}
