@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public GameObject currentChoice;
 
     [Header("Hands")]
+    public Transform hands;
     public Transform hand1;
     public Transform hand2;
     public InteractionManager InteractionManager;

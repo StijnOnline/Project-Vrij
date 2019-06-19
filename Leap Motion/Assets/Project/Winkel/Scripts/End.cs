@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class End : MonoBehaviour
 {
     public Transform cameraTarget;
+    public Transform handsTarget;
     public Transform spawnPoint;
     public float spawnDelay;
     
@@ -16,6 +17,8 @@ public class End : MonoBehaviour
         {
             GameManager.GM.cart.GetComponent<Rigidbody>().isKinematic = true;
             GameManager.GM.cartCamera.GetComponent<CameraLook>().pan = false;
+            GameManager.GM.hands.transform.position = handsTarget.position;
+            GameManager.GM.hands.transform.localRotation = handsTarget.rotation;
             StartCoroutine("PanCamera");
             StartCoroutine("Spawn");
         }
