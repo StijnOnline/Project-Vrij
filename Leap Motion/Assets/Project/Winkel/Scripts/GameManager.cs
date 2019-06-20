@@ -27,9 +27,14 @@ public class GameManager : MonoBehaviour
 
     [Header("Products")]
     public List<GameObject> allProducts = new List<GameObject>();
-    public List<string> shoppingList = new List<string>();
+    public List<GameObject> shoppingList = new List<GameObject>();
+    public List<string> shoppingListNames = new List<string>();
     public List<int> amounts = new List<int>();
     public List<GameObject> inCart = new List<GameObject>();
+    public AudioSource productAudioSource;
+    public AudioClip[] productSounds;
+    public float shoppingListSize = 100;
+    public Vector2Int minMaxAmounts;
 
     [Header("Pausing")]
     [HideInInspector] public bool paused = false;
@@ -41,6 +46,7 @@ public class GameManager : MonoBehaviour
     [Header("Start")]
     public GameObject logo;
     public GameObject grabText;
+    public GameObject groceryList;
     
 
 
@@ -48,6 +54,20 @@ public class GameManager : MonoBehaviour
     {
         GM = this;
         DontDestroyOnLoad(gameObject);
+
+        if (shoppingListSize > allProducts.Count) { shoppingListSize = allProducts.Count; }
+
+        while (shoppingList.Count < shoppingListSize)
+        {
+            GameObject product = allProducts[Random.Range(0, allProducts.Count)];
+            if (!shoppingList.Contains(product))
+            {
+                shoppingList.Add(product);
+                shoppingListNames.Add(product.GetComponent<Product>().name);
+                amounts.Add(Random.Range(minMaxAmounts.x, minMaxAmounts.y + 1));
+            }
+
+        }
     }
 
     private void Update()
@@ -100,6 +120,7 @@ public class GameManager : MonoBehaviour
     {
         cart.GetComponent<CartMovement>().enabled = true;
         cartCamera.GetComponent<CameraLook>().panMultiplier = 100f;
+        groceryList.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
 
         grabText.SetActive(false);
     }
