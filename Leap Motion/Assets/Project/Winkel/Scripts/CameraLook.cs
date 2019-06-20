@@ -18,7 +18,7 @@ public class CameraLook : MonoBehaviour
     void Update()
     {
         float handAverage = 0f;
-        if (pan && hand1.gameObject.activeSelf || hand2.gameObject.activeSelf)
+        if (pan && (hand1.gameObject.activeSelf || hand2.gameObject.activeSelf))
         {            
             if (hand1.gameObject.activeSelf && !hand2.gameObject.activeSelf) { handAverage = hand1.localPosition.x; }
             if (!hand1.gameObject.activeSelf && hand2.gameObject.activeSelf) { handAverage = hand2.localPosition.x; }

@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Start")]
     public GameObject logo;
+    public GameObject grabText;
     
 
 
@@ -97,9 +98,10 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        GameManager.GM.cart.GetComponent<CartMovement>().enabled = true;
-        GameManager.GM.cartCamera.GetComponent<CameraLook>().panMultiplier = 100f;
-        //fade title screen logo
+        cart.GetComponent<CartMovement>().enabled = true;
+        cartCamera.GetComponent<CameraLook>().panMultiplier = 100f;
+
+        grabText.SetActive(false);
     }
 
 }

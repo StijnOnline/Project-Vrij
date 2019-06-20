@@ -11,9 +11,13 @@ public class ProductTracker : MonoBehaviour
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI scoreText;
 
+    public AudioSource audioSource;
+    public AudioClip[] inCartSounds;
+
     void Start()
     {
-        if(shoppingListSize >GameManager.GM.allProducts.Count) { shoppingListSize = GameManager.GM.allProducts.Count; }
+        audioSource = GetComponent<AudioSource>();
+        if (shoppingListSize >GameManager.GM.allProducts.Count) { shoppingListSize = GameManager.GM.allProducts.Count; }
 
         while (GameManager.GM.shoppingList.Count < shoppingListSize)
         {
@@ -38,6 +42,7 @@ public class ProductTracker : MonoBehaviour
     {
         if(other.tag == "Product") {
             GameManager.GM.inCart.Add(other.gameObject);
+            audioSource.PlayOneShot(inCartSounds[Random.Range(0, inCartSounds.Length)]);
         }
     }
 
