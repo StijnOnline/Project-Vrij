@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Project/Winkel/Winkel.unity
-    guid: 4452ca844b5a19e49822c172722aac7d
+    path: Assets/Project/Winkel/Winkel Lorenzo.unity
+    guid: 951e4af21eea0a847a5cfb92453aa656
   - enabled: 1
     path: Assets/Project/Winkel/ScoreBoard.unity
     guid: 32a6bf692b51f014d85be9aece0d5718
