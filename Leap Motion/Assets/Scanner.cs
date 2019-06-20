@@ -17,16 +17,16 @@ public class Scanner : MonoBehaviour
         {
             productText.color = Color.black;
             AudioSource.PlayOneShot(bleep);
-            string[] split = other.gameObject.name.Split('+');
-            productText.SetText(split[0] + "\n ");
-            StartCoroutine(Check(split[0], int.Parse(split[1].Split('(')[0])));               
+            Product product = other.GetComponent<Product>();
+            productText.SetText(product.name + "\n ");
+            StartCoroutine(Check(product.name, product.score));               
         }
     }
 
     public IEnumerator Check(string name, int score)
     {
         yield return new WaitForSeconds(0.5f);
-        if (GameManager.GM.shoppingList.Contains(name) && GameManager.GM.amounts[GameManager.GM.shoppingList.IndexOf(name)] > 0)
+        if (GameManager.GM.shoppingListNames.Contains(name) && GameManager.GM.amounts[GameManager.GM.shoppingListNames.IndexOf(name)] > 0)
         {
             productText.text += "+" + score;
             productText.color = Color.green;
