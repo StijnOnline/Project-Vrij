@@ -47,7 +47,7 @@ public class ShoppingList : MonoBehaviour
 
     IEnumerator Show()
     {
-        while (transform.localPosition.magnitude > .1f)
+        while (transform.localPosition.magnitude > .05f)
         {
             transform.localPosition = Vector3.Lerp(transform.localPosition, Vector3.zero, 0.1f);
             transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.identity, 0.1f);
