@@ -18,6 +18,8 @@ public class RespawnList : MonoBehaviour
 
     private void Update()
     {
+        //if game begun
+
         if(inCart || inHand)
         {
             lastTime = Time.time;
@@ -28,7 +30,6 @@ public class RespawnList : MonoBehaviour
 
     void Respawn()
     {
-        Debug.Log("Respawn");
         transform.localPosition = startPos;
     }
 

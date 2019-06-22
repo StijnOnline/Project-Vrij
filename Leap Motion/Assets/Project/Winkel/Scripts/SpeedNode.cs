@@ -9,7 +9,7 @@ public class SpeedNode : MonoBehaviour
     {
         if(other.tag == "Cart")
         {
-            other.GetComponent<CartMovement>().speed = newSpeed;
+            GameManager.GM.cart.GetComponent<CartMovement>().speed = newSpeed;
         }
     }
 }

@@ -18,6 +18,6 @@ public class LopendeBand : MonoBehaviour
 
     private void OnCollisionStay(Collision otherThing)
     {
-        otherThing.rigidbody.velocity = new Vector3(0, 0, speed * forceMultiplier);
+        otherThing.rigidbody.velocity = transform.forward * speed * forceMultiplier;
     }
 }

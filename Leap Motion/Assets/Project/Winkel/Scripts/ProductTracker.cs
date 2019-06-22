@@ -27,7 +27,6 @@ public class ProductTracker : MonoBehaviour
     {
         if(other.tag == "Product") {
             GameManager.GM.inCart.Add(other.gameObject);
-            other.transform.SetParent(transform);
         }
         if (other.tag == "List")
         {
@@ -40,7 +39,6 @@ public class ProductTracker : MonoBehaviour
         if (other.tag == "Product")
         {
             GameManager.GM.inCart.Remove(other.gameObject);
-            other.transform.parent = null;
         }
         if (other.tag == "List")
         {
