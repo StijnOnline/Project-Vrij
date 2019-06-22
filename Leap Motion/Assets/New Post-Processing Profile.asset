@@ -78,7 +78,7 @@ MonoBehaviour:
       useCameraFov: 0
       kernelSize: 1
   motionBlur:
-    m_Enabled: 1
+    m_Enabled: 0
     m_Settings:
       shutterAngle: 270
       sampleCount: 30
@@ -323,9 +323,9 @@ MonoBehaviour:
       mode: 0
       color: {r: 0, g: 0, b: 0, a: 1}
       center: {x: 0.5, y: 0.5}
-      intensity: 0.504
-      smoothness: 0.2
-      roundness: 1
+      intensity: 0.472
+      smoothness: 0.414
+      roundness: 0.924
       mask: {fileID: 0}
       opacity: 1
       rounded: 0
