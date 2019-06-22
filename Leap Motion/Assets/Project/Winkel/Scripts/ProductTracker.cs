@@ -29,6 +29,10 @@ public class ProductTracker : MonoBehaviour
             GameManager.GM.inCart.Add(other.gameObject);
             other.transform.SetParent(transform);
         }
+        if (other.tag == "List")
+        {
+            other.GetComponent<RespawnList>().inCart = true;
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -37,6 +41,10 @@ public class ProductTracker : MonoBehaviour
         {
             GameManager.GM.inCart.Remove(other.gameObject);
             other.transform.parent = null;
+        }
+        if (other.tag == "List")
+        {
+            other.GetComponent<RespawnList>().inCart = false;
         }
     }
 }

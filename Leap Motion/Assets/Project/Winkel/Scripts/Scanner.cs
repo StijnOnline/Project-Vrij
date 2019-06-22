@@ -31,6 +31,7 @@ public class Scanner : MonoBehaviour
             productText.text += "+" + score;
             productText.color = Color.green;
             GameManager.GM.score += score;
+            GameManager.GM.amounts[GameManager.GM.shoppingListNames.IndexOf(name)] -= 1;
         }
         else
         {
