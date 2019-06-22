@@ -1,5 +1,82 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1963298779847214481
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3270827252439758722}
+  - component: {fileID: 5782435766413659572}
+  - component: {fileID: 217263335200158029}
+  m_Layer: 0
+  m_Name: Pizza
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3270827252439758722
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963298779847214481}
+  m_LocalRotation: {x: 0.09772888, y: -0.03093987, z: 0.21415935, w: 0.97140497}
+  m_LocalPosition: {x: 0.015829, y: 0.205, z: -0.0066229}
+  m_LocalScale: {x: 15.948777, y: 15.948777, z: 15.948777}
+  m_Children: []
+  m_Father: {fileID: 2225103437891603828}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 11.72, y: -1.0680001, z: 24.756}
+--- !u!33 &5782435766413659572
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963298779847214481}
+  m_Mesh: {fileID: 4094620590851880050, guid: 921d48ac37e318d4e93156ad90abb6f1, type: 3}
+--- !u!23 &217263335200158029
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963298779847214481}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 4d92fefbebf78874a899058821676182, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1 &6751714830596396587
 GameObject:
   m_ObjectHideFlags: 0
@@ -17,7 +94,7 @@ GameObject:
   - component: {fileID: -1865137593450410809}
   m_Layer: 0
   m_Name: Frozen Pizza
-  m_TagString: Untagged
+  m_TagString: Product
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -155,95 +232,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Bevroren pizza
   score: 1
---- !u!1001 &5609210197770503379
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 2225103437891603828}
-    m_Modifications:
-    - target: {fileID: 6262505017637093698, guid: f9bb88fa69cecbb47b15577232a2a066,
-        type: 3}
-      propertyPath: m_Name
-      value: Pizza
-      objectReference: {fileID: 0}
-    - target: {fileID: 6968118634795938641, guid: f9bb88fa69cecbb47b15577232a2a066,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.020012144
-      objectReference: {fileID: 0}
-    - target: {fileID: 6968118634795938641, guid: f9bb88fa69cecbb47b15577232a2a066,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.32790288
-      objectReference: {fileID: 0}
-    - target: {fileID: 6968118634795938641, guid: f9bb88fa69cecbb47b15577232a2a066,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.008373174
-      objectReference: {fileID: 0}
-    - target: {fileID: 6968118634795938641, guid: f9bb88fa69cecbb47b15577232a2a066,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.09772888
-      objectReference: {fileID: 0}
-    - target: {fileID: 6968118634795938641, guid: f9bb88fa69cecbb47b15577232a2a066,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.03093987
-      objectReference: {fileID: 0}
-    - target: {fileID: 6968118634795938641, guid: f9bb88fa69cecbb47b15577232a2a066,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.21415935
-      objectReference: {fileID: 0}
-    - target: {fileID: 6968118634795938641, guid: f9bb88fa69cecbb47b15577232a2a066,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.97140497
-      objectReference: {fileID: 0}
-    - target: {fileID: 6968118634795938641, guid: f9bb88fa69cecbb47b15577232a2a066,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6968118634795938641, guid: f9bb88fa69cecbb47b15577232a2a066,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 11.72
-      objectReference: {fileID: 0}
-    - target: {fileID: 6968118634795938641, guid: f9bb88fa69cecbb47b15577232a2a066,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -1.0680001
-      objectReference: {fileID: 0}
-    - target: {fileID: 6968118634795938641, guid: f9bb88fa69cecbb47b15577232a2a066,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 24.756
-      objectReference: {fileID: 0}
-    - target: {fileID: 6968118634795938641, guid: f9bb88fa69cecbb47b15577232a2a066,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 20.163744
-      objectReference: {fileID: 0}
-    - target: {fileID: 6968118634795938641, guid: f9bb88fa69cecbb47b15577232a2a066,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 20.163744
-      objectReference: {fileID: 0}
-    - target: {fileID: 6968118634795938641, guid: f9bb88fa69cecbb47b15577232a2a066,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 20.163744
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1508767195474859293, guid: f9bb88fa69cecbb47b15577232a2a066, type: 3}
-    - {fileID: 4512396394285520772, guid: f9bb88fa69cecbb47b15577232a2a066, type: 3}
-  m_SourcePrefab: {fileID: 100100000, guid: f9bb88fa69cecbb47b15577232a2a066, type: 3}
---- !u!4 &3270827252439758722 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6968118634795938641, guid: f9bb88fa69cecbb47b15577232a2a066,
-    type: 3}
-  m_PrefabInstance: {fileID: 5609210197770503379}
-  m_PrefabAsset: {fileID: 0}
