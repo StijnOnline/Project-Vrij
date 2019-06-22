@@ -28,7 +28,7 @@ public class ProductTracker : MonoBehaviour
         if(other.tag == "Product") {
             GameManager.GM.inCart.Add(other.gameObject);
         }
-        if (other.transform.parent.tag == "Product")
+        if (other.transform.parent != null && other.transform.parent.tag == "Product")
         {
             GameManager.GM.inCart.Add(other.transform.parent.gameObject);
         }
@@ -44,7 +44,7 @@ public class ProductTracker : MonoBehaviour
         {
             GameManager.GM.inCart.Remove(other.gameObject);
         }
-        if (other.transform.parent.tag == "Product")
+        if (other.transform.parent != null &&  other.transform.parent.tag == "Product")
         {
             GameManager.GM.inCart.Remove(other.transform.parent.gameObject);
         }
