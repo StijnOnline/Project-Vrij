@@ -34,7 +34,7 @@ public class ProductTracker : MonoBehaviour
         }
         if (other.tag == "List")
         {
-            other.GetComponent<RespawnList>().inCart = true;
+            other.GetComponent<ShoppingList>().inCart = true;
         }
     }
 
@@ -51,7 +51,7 @@ public class ProductTracker : MonoBehaviour
 
         if (other.tag == "List")
         {
-            other.GetComponent<RespawnList>().inCart = false;
+            other.GetComponent<ShoppingList>().inCart = false;
         }
     }
 }
