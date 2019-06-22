@@ -9,6 +9,8 @@ public class End : MonoBehaviour
     public Transform handsTarget;
     public Transform spawnPoint;
     public float spawnDelay;
+
+    public Scanner scanner;
     
 
     private void OnTriggerEnter(Collider other)
@@ -45,7 +47,9 @@ public class End : MonoBehaviour
             Instantiate(GameManager.GM.inCart[i], spawnPoint.position, spawnPoint.rotation);
             yield return new WaitForSeconds(spawnDelay);
         }
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(10f);
+        scanner.MissingProducts();
+        yield return new WaitForSeconds(10f);
         SceneManager.LoadScene(1);
     }
 }

@@ -10,6 +10,8 @@ public class Scanner : MonoBehaviour
     public AudioSource AudioSource;
 
     public AudioClip bleep;
+    public AudioClip yay;
+    public AudioClip boo;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -32,13 +34,29 @@ public class Scanner : MonoBehaviour
             productText.color = Color.green;
             GameManager.GM.score += score;
             GameManager.GM.amounts[GameManager.GM.shoppingListNames.IndexOf(name)] -= 1;
+            AudioSource.PlayOneShot(yay);
         }
         else
         {
             productText.text += "-" + score;
             productText.color = Color.red;
             GameManager.GM.score -= score;
+            AudioSource.PlayOneShot(boo);
         }
+        scoreText.SetText("Total: " + GameManager.GM.score);
+    }
+
+    public void MissingProducts()
+    {
+        int missingScore = 0;
+        for(int i= 0; i < GameManager.GM.amounts.Count; i++)
+        {
+            missingScore += GameManager.GM.amounts[i] * GameManager.GM.shoppingList[i].GetComponent<Product>().score;
+
+        }
+        productText.text = "Missing Products\n-"+missingScore;
+        productText.color = Color.red;
+        GameManager.GM.score -= missingScore;
         scoreText.SetText("Total: " + GameManager.GM.score);
     }
 }
