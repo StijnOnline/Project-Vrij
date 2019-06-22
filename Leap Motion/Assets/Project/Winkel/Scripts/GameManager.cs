@@ -36,6 +36,8 @@ public class GameManager : MonoBehaviour
     public float shoppingListSize = 100;
     public Vector2Int minMaxAmounts;
 
+    public GameObject savedText;
+
     [Header("Pausing")]
     [HideInInspector] public bool paused = false;
     public float pauseDelay = 1f;
@@ -44,9 +46,9 @@ public class GameManager : MonoBehaviour
     public List<AudioSource> audioSources;
 
     [Header("Start")]
-    public GameObject logo;
     public GameObject grabText;
     public GameObject groceryList;
+    public bool playing;
     
 
 
@@ -74,7 +76,7 @@ public class GameManager : MonoBehaviour
     {
         hand1Tracked = hand1Controller.isTracked;
         hand2Tracked = hand2Controller.isTracked;
-        if (!logo.activeSelf)
+        if (playing)
         {
             if (GameManager.GM.hand1Tracked && GameManager.GM.hand2Tracked)
             {
@@ -110,10 +112,6 @@ public class GameManager : MonoBehaviour
                 pauseScreen.transform.GetChild(1).gameObject.SetActive(hand2Tracked);
             }
         }
-        else if (GameManager.GM.hand1Tracked && GameManager.GM.hand2Tracked)
-        {
-            logo.SetActive(false);
-        }
     }
 
     public void StartGame()
@@ -123,6 +121,7 @@ public class GameManager : MonoBehaviour
         groceryList.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
 
         grabText.SetActive(false);
+        playing = true;
     }
 
 }

@@ -18,13 +18,14 @@ public class RespawnList : MonoBehaviour
 
     private void Update()
     {
-        //if game begun
-
-        if(inCart || inHand)
+        if (!GameManager.GM.playing)
         {
-            lastTime = Time.time;
-        }
-        if (Time.time > lastTime + delay) { Respawn(); }
+            if (inCart || inHand)
+            {
+                lastTime = Time.time;
+            }
+            if (Time.time > lastTime + delay) { Respawn(); }
+        }        
     }
 
 
