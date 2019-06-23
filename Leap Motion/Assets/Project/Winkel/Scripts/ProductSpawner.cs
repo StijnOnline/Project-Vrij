@@ -15,11 +15,10 @@ public class ProductSpawner : MonoBehaviour
     {
         float pos = 0; 
         for (int i = 0; i<count; i++)
-        {
-            GameObject product = products[Random.Range(0, products.Length)];            
+        {        
             foreach(Transform tr in positions)
             {
-                GameObject ob = Instantiate(product, tr);
+                GameObject ob = Instantiate(products[Random.Range(0, products.Length)], tr);
                 ob.transform.position = tr.position + pos * tr.forward;
             }            
             pos += offset;
