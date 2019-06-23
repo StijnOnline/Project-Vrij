@@ -13,7 +13,8 @@ public class EnableAnimators : MonoBehaviour
         {
             foreach(Animator animator in animatorsToEnable)
             {
-                animator.enabled = true;
+                
+                animator.SetTrigger("trigger"); 
             }
         }
     }
