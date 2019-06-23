@@ -183,7 +183,7 @@ GameObject:
   - component: {fileID: 862581770066619582}
   - component: {fileID: -390486126082039577}
   m_Layer: 0
-  m_Name: Appel+1
+  m_Name: Appel
   m_TagString: Product
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -197,8 +197,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8000714482990491909}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.232849, y: 2.8992015e-17, z: -0.39170527}
-  m_LocalScale: {x: 0.7329597, y: 0.7329597, z: 0.7329597}
+  m_LocalPosition: {x: -8.232849, y: -0.036696, z: -0.39170527}
+  m_LocalScale: {x: 1.3904245, y: 1.3904245, z: 1.3904245}
   m_Children:
   - {fileID: 1013564286543357829}
   - {fileID: 3034033335321469578}
