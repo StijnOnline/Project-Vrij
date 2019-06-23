@@ -30,7 +30,10 @@ public class ProductTracker : MonoBehaviour
         }
         if (other.transform.parent != null && other.transform.parent.tag == "Product")
         {
-            GameManager.GM.inCart.Add(other.transform.parent.gameObject);
+            if (!GameManager.GM.inCart.Contains(other.transform.parent.gameObject))
+            {
+                GameManager.GM.inCart.Add(other.transform.parent.gameObject);
+            }
         }
         if (other.tag == "List")
         {

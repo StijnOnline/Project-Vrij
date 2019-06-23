@@ -15,7 +15,7 @@ public class Scanner : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Product")
+        if (other.tag == "Product" || (other.transform.parent != null && other.transform.parent.tag == "Product"))
         {
             productText.color = Color.black;
             AudioSource.PlayOneShot(bleep);

@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 3080077494043725214}
   m_Layer: 0
   m_Name: Ice Cream (2)
-  m_TagString: Product
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -428,7 +428,7 @@ GameObject:
   - component: {fileID: 8787901189779542641}
   m_Layer: 0
   m_Name: Ice Cream (3)
-  m_TagString: Product
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -460,7 +460,7 @@ GameObject:
   - component: {fileID: 6850589239915138679}
   m_Layer: 0
   m_Name: Ice Cream (1)
-  m_TagString: Product
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -498,7 +498,7 @@ GameObject:
   - component: {fileID: 7524797113364562854}
   m_Layer: 0
   m_Name: Frozen Popcicle
-  m_TagString: Untagged
+  m_TagString: Product
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -881,7 +881,7 @@ GameObject:
   - component: {fileID: 4793803741220731637}
   m_Layer: 0
   m_Name: Ice Cream
-  m_TagString: Product
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
