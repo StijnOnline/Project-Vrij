@@ -26,6 +26,7 @@ public class Scanner : MonoBehaviour
 
         if (other.transform.parent != null && other.transform.parent.tag == "Product")
         {
+            other.transform.parent.tag = "Untagged";
             productText.color = Color.black;
             AudioSource.PlayOneShot(bleep);
             Product product = other.transform.parent.GetComponent<Product>();
