@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
     [Header("Start")]
     public GameObject grabText;
     public GameObject groceryList;
+    public GameObject animatedCart;
     public bool playing;
     
 
@@ -121,6 +122,7 @@ public class GameManager : MonoBehaviour
         groceryList.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
 
         grabText.SetActive(false);
+        animatedCart.SetActive(false);
         playing = true;
     }
 

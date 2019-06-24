@@ -9,7 +9,7 @@ public class Product : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.relativeVelocity.magnitude > 3.5f)
+        if (GameManager.GM.productSounds.Length > 0 && collision.relativeVelocity.magnitude > 3.5f)
         {
             GameManager.GM.productAudioSource.PlayOneShot(GameManager.GM.productSounds[Random.Range(0, GameManager.GM.productSounds.Length - 1)]);
         }
