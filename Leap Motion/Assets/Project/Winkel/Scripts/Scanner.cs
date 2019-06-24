@@ -15,7 +15,7 @@ public class Scanner : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Product" || (other.transform.parent != null && other.transform.parent.tag == "Product"))
+        if (other.tag == "Product" )
         {
             productText.color = Color.black;
             AudioSource.PlayOneShot(bleep);
@@ -23,6 +23,15 @@ public class Scanner : MonoBehaviour
             productText.SetText(product.name + "\n ");
             StartCoroutine(Check(product.name, product.score));               
         }
+
+        if (other.transform.parent != null && other.transform.parent.tag == "Product")
+        {
+            productText.color = Color.black;
+            AudioSource.PlayOneShot(bleep);
+            Product product = other.transform.parent.GetComponent<Product>();
+            productText.SetText(product.name + "\n ");
+            StartCoroutine(Check(product.name, product.score));
+        } 
     }
 
     public IEnumerator Check(string name, int score)
